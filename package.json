@@ -5,10 +5,14 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "seed": "tsx scripts/seed-database.ts",
+    "seed:clear": "tsx scripts/seed-database.ts clear",
+    "seed:js": "node scripts/seed-database.js"
   },
   "dependencies": {
     "date-fns": "^4.1.0",
+    "dotenv": "^17.2.2",
     "firebase": "^10.14.1",
     "firebase-admin": "^12.0.0",
     "next": "15.5.2",
@@ -21,7 +25,9 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "cross-env": "^10.0.0",
     "tailwindcss": "^4",
+    "tsx": "^4.7.0",
     "typescript": "^5"
   }
 }
