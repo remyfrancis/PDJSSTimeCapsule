@@ -51,9 +51,9 @@ export const FormFieldSchema = z.object({
 });
 
 export const FormStateSchema = z.object({
-  values: z.record(z.any()),
-  errors: z.record(z.string()).partial(),
-  touched: z.record(z.boolean()).partial(),
+  values: z.record(z.string(), z.any()),
+  errors: z.record(z.string(), z.string()).optional(),
+  touched: z.record(z.string(), z.boolean()).optional(),
   isSubmitting: z.boolean(),
   isValid: z.boolean(),
 });

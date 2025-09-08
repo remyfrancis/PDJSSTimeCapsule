@@ -4,6 +4,7 @@ export * from './user';
 export * from './capsule';
 export * from './content';
 export * from './api';
+export * from './formValidator';
 
 // Re-export Zod for convenience
 export { z } from 'zod';
@@ -38,6 +39,12 @@ export const isValidId = (id: string): boolean => {
 export const isValidEmail = (email: string): boolean => {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return emailRegex.test(email);
+};
+
+export const validateEmail = isValidEmail;
+
+export const validatePassword = (password: string): boolean => {
+  return typeof password === 'string' && password.length >= 6;
 };
 
 export const isValidUrl = (url: string): boolean => {

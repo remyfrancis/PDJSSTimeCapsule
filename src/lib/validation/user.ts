@@ -24,6 +24,8 @@ export const UserSchema = BaseDocumentSchema.extend({
   preferences: UserPreferencesSchema.optional(),
   isEmailVerified: z.boolean().optional().default(false),
   accountStatus: z.enum(['active', 'suspended', 'deleted']).default('active'),
+  role: z.enum(['user', 'admin', 'super_admin']).default('user'),
+  permissions: z.array(z.string()).optional().default([]),
 });
 
 // User creation input validation
